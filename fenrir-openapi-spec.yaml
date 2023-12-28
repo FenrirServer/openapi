@@ -767,7 +767,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApiTokenListResponse'
           description: Request fulfilled, document follows
@@ -785,13 +785,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApiTokenResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
@@ -810,7 +810,7 @@ paths:
       responses:
         '204':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/Response'
           description: Request fulfilled, nothing follows
@@ -828,13 +828,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApiTokenListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -847,7 +847,7 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationListResponse'
           description: Request fulfilled, document follows
@@ -861,13 +861,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
@@ -886,19 +886,19 @@ paths:
       responses:
         '204':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/Response'
           description: Request fulfilled, nothing follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -916,13 +916,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -942,19 +942,19 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -973,13 +973,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationConfigurationResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1003,19 +1003,19 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationConfigurationResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1034,13 +1034,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationConfigurationListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1052,25 +1052,25 @@ paths:
       operationId: get_application_configuration
       parameters:
       - in: path
-        name: application_uuid
+        name: configuration_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: configuration_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationConfigurationResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1089,13 +1089,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/DeploymentListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1119,19 +1119,19 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/DeploymentResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1143,25 +1143,25 @@ paths:
       operationId: delete_deployment
       parameters:
       - in: path
-        name: deployment_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
       responses:
         '204':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/Response'
           description: Request fulfilled, nothing follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1172,25 +1172,25 @@ paths:
       operationId: get_deployment
       parameters:
       - in: path
-        name: deployment_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/DeploymentResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1202,25 +1202,25 @@ paths:
       operationId: get_instances
       parameters:
       - in: path
-        name: deployment_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationInstanceListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1232,7 +1232,7 @@ paths:
       operationId: get_instance
       parameters:
       - in: path
-        name: instance_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1242,20 +1242,20 @@ paths:
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationInstanceResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1267,7 +1267,7 @@ paths:
       operationId: get_instance_logs
       parameters:
       - in: path
-        name: instance_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1277,20 +1277,20 @@ paths:
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/InstanceLogs'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1302,7 +1302,7 @@ paths:
       operationId: get_instance_logs_preview
       parameters:
       - in: path
-        name: instance_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1312,20 +1312,20 @@ paths:
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/InstanceLogsPreview'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1345,25 +1345,25 @@ paths:
             type: string
           type: array
       - in: path
-        name: deployment_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/DeploymentStatsResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1382,13 +1382,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ImageListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1407,13 +1407,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1433,19 +1433,19 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1457,25 +1457,25 @@ paths:
       operationId: delete_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       responses:
         '204':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/Response'
           description: Request fulfilled, nothing follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1486,25 +1486,25 @@ paths:
       operationId: get_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1515,12 +1515,12 @@ paths:
       operationId: update_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1529,19 +1529,19 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1553,25 +1553,25 @@ paths:
       operationId: get_current_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueConfigurationResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1582,12 +1582,12 @@ paths:
       operationId: create_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1600,19 +1600,19 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueConfigurationResponse'
           description: Request fulfilled, document follows
         '400':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/BadRequestResponse'
           description: Bad request syntax or unsupported method
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1624,25 +1624,25 @@ paths:
       operationId: get_matchmaking_queue_configurations
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueConfigurationListResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1654,7 +1654,7 @@ paths:
       operationId: get_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: configuration_uuid
         required: true
         schema:
           type: string
@@ -1664,20 +1664,20 @@ paths:
         schema:
           type: string
       - in: path
-        name: configuration_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/MatchmakingQueueConfigurationResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
@@ -1704,13 +1704,13 @@ paths:
       responses:
         '200':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ApplicationStatsResponse'
           description: Request fulfilled, document follows
         '404':
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundResponse'
           description: Nothing matches the given URI
