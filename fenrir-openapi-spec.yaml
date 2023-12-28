@@ -1052,12 +1052,12 @@ paths:
       operationId: get_application_configuration
       parameters:
       - in: path
-        name: configuration_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: configuration_uuid
         required: true
         schema:
           type: string
@@ -1232,17 +1232,17 @@ paths:
       operationId: get_instance
       parameters:
       - in: path
-        name: instance_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
         name: application_uuid
         required: true
         schema:
           type: string
       - in: path
         name: deployment_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: instance_uuid
         required: true
         schema:
           type: string
@@ -1267,17 +1267,17 @@ paths:
       operationId: get_instance_logs
       parameters:
       - in: path
-        name: instance_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
         name: application_uuid
         required: true
         schema:
           type: string
       - in: path
         name: deployment_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: instance_uuid
         required: true
         schema:
           type: string
@@ -1302,17 +1302,17 @@ paths:
       operationId: get_instance_logs_preview
       parameters:
       - in: path
-        name: instance_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
         name: application_uuid
         required: true
         schema:
           type: string
       - in: path
         name: deployment_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: instance_uuid
         required: true
         schema:
           type: string
@@ -1654,12 +1654,12 @@ paths:
       operationId: get_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: configuration_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: configuration_uuid
         required: true
         schema:
           type: string
