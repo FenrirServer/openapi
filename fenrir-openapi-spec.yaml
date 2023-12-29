@@ -427,6 +427,7 @@ components:
         last_tag_time:
           description: Time when image was last tagged
           example: '2024-01-22T19:28:42Z'
+          format: date-time
           type: string
         size:
           description: The size of the image, in megabytes.
@@ -754,8 +755,31 @@ components:
       scheme: bearer
       type: http
 info:
-  description: Fenrir Cloud API. Allows to interact with Fenrir Cloud infrastructure
-    via Rest API.
+  description: "# Introduction\n\nThe Fenrir Cloud API allows you to interact with\
+    \ Fenrir Cloud \nand manage Applications, Deployments, and other resources \n\
+    using conventional HTTP requests.\n\n\n\n## Authentication\n\nThe Fenrir Cloud\
+    \ API uses API keys for the authentication. \nYou can create new API keys in your\
+    \ Fenrir Cloud dashboard.\n\nYour bearer API key must be set in the \"Authorization\"\
+    \ header, for example:\n\n```bash\ncurl https://api.fenrircloud.com/1.0/api/applications\
+    \ \\\n   -H \"Accept: application/json\" \\\n   -H \"Authorization: Bearer FENRIR_API_KEY\"\
+    \n```\n\n## Responses\n\nWhen a request is successful, a response body will typically\
+    \ contain a JSON object. \nFor DELETE requests, a response with successful HTTP\
+    \ 204 NO_CONTENT status and a simple status will be returned.\n\nFor other request,\
+    \ a JSON object will contain a requested object.\nIf list of objects is requested,\
+    \ an array of them will be returned instead. \n\n### Example Response (Single\
+    \ Object)\n\n```json\n{\n  \"application\": {\n    \"name\": \"my-app\",\n   \
+    \ ...\n  }\n}\n```\n\n### Example Response (Multiple Objects)\n\n```json\n{\n\
+    \  \"applications\": \n    [\n        {\n          \"name\": \"my-app\",\n   \
+    \       ...\n        },\n        {\n          \"name\": \"another-app\",\n   \
+    \       ...\n        }\n    ]\n}\n```\n\n## Error Handling\n\nDepending on the\
+    \ issue, a *4XX* status code will be returned. \nA body will contain a JSON object\
+    \ with the details of the message.\n\nInside a JSON object, an error message will\
+    \ be included. \n\nFor 400 Bad Request errors caused by validation issues, additional\
+    \ `errors` key will be set.\nThat key will contain detailed information about\
+    \ each validation error.\n\n### Example Error Response\n\n```json\n{\n  \"message\"\
+    : \"Invalid Request\",\n  \"errors\": [\n    {\n      \"field\": \"name\",\n \
+    \     \"errors\": [\"must not contain special characters\", \"must not be longer\
+    \ than 128 character\"]\n    },\n    ...\n  ]\n}\n```\n\n"
   title: Fenrir Api
   version: v1
 openapi: 3.0.0
@@ -1232,17 +1256,17 @@ paths:
       operationId: get_instance
       parameters:
       - in: path
+        name: instance_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
         name: application_uuid
         required: true
         schema:
           type: string
       - in: path
         name: deployment_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
-        name: instance_uuid
         required: true
         schema:
           type: string
@@ -1267,17 +1291,17 @@ paths:
       operationId: get_instance_logs
       parameters:
       - in: path
+        name: instance_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
         name: application_uuid
         required: true
         schema:
           type: string
       - in: path
         name: deployment_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
-        name: instance_uuid
         required: true
         schema:
           type: string
@@ -1302,17 +1326,17 @@ paths:
       operationId: get_instance_logs_preview
       parameters:
       - in: path
+        name: instance_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
         name: application_uuid
         required: true
         schema:
           type: string
       - in: path
         name: deployment_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
-        name: instance_uuid
         required: true
         schema:
           type: string
@@ -1457,12 +1481,12 @@ paths:
       operationId: delete_matchmaking_queue
       parameters:
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1486,12 +1510,12 @@ paths:
       operationId: get_matchmaking_queue
       parameters:
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1515,12 +1539,12 @@ paths:
       operationId: update_matchmaking_queue
       parameters:
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1553,12 +1577,12 @@ paths:
       operationId: get_current_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1582,12 +1606,12 @@ paths:
       operationId: create_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1624,12 +1648,12 @@ paths:
       operationId: get_matchmaking_queue_configurations
       parameters:
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
@@ -1659,12 +1683,12 @@ paths:
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
