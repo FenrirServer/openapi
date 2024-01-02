@@ -579,7 +579,7 @@ components:
             property.
           example: '100'
           maxLength: 128
-          minLength: 4
+          minLength: 1
           type: string
         key:
           description: A unique key of the property.
@@ -1076,12 +1076,12 @@ paths:
       operationId: get_application_configuration
       parameters:
       - in: path
-        name: configuration_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: configuration_uuid
         required: true
         schema:
           type: string
@@ -1481,12 +1481,12 @@ paths:
       operationId: delete_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1510,12 +1510,12 @@ paths:
       operationId: get_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1539,12 +1539,12 @@ paths:
       operationId: update_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1577,12 +1577,12 @@ paths:
       operationId: get_current_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1606,12 +1606,12 @@ paths:
       operationId: create_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1648,12 +1648,12 @@ paths:
       operationId: get_matchmaking_queue_configurations
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1683,12 +1683,12 @@ paths:
         schema:
           type: string
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
