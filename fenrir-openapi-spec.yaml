@@ -1259,12 +1259,12 @@ paths:
       operationId: get_instance
       parameters:
       - in: path
-        name: deployment_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: instance_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
@@ -1294,12 +1294,12 @@ paths:
       operationId: get_instance_logs
       parameters:
       - in: path
-        name: deployment_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: instance_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
@@ -1329,12 +1329,12 @@ paths:
       operationId: get_instance_logs_preview
       parameters:
       - in: path
-        name: deployment_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: instance_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
@@ -1484,12 +1484,12 @@ paths:
       operationId: delete_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1513,12 +1513,12 @@ paths:
       operationId: get_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1542,12 +1542,12 @@ paths:
       operationId: update_matchmaking_queue
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1580,12 +1580,12 @@ paths:
       operationId: get_current_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1609,12 +1609,12 @@ paths:
       operationId: create_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1651,12 +1651,12 @@ paths:
       operationId: get_matchmaking_queue_configurations
       parameters:
       - in: path
-        name: queue_uuid
+        name: application_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: application_uuid
+        name: queue_uuid
         required: true
         schema:
           type: string
@@ -1681,17 +1681,17 @@ paths:
       operationId: get_matchmaking_queue_configuration
       parameters:
       - in: path
-        name: queue_uuid
-        required: true
-        schema:
-          type: string
-      - in: path
         name: configuration_uuid
         required: true
         schema:
           type: string
       - in: path
         name: application_uuid
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: queue_uuid
         required: true
         schema:
           type: string
