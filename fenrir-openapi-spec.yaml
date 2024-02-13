@@ -1254,12 +1254,12 @@ paths:
       operationId: get_instance
       parameters:
       - in: path
-        name: deployment_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: instance_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
@@ -1289,12 +1289,12 @@ paths:
       operationId: get_instance_logs
       parameters:
       - in: path
-        name: deployment_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: instance_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
@@ -1324,12 +1324,12 @@ paths:
       operationId: get_instance_logs_preview
       parameters:
       - in: path
-        name: deployment_uuid
+        name: instance_uuid
         required: true
         schema:
           type: string
       - in: path
-        name: instance_uuid
+        name: deployment_uuid
         required: true
         schema:
           type: string
