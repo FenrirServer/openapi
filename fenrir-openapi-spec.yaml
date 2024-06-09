@@ -104,6 +104,24 @@ components:
           example: df345e3497b14f2ca1ecd8c160131d7a
           readOnly: true
           type: string
+        autoscaling_cooldown_seconds:
+          description: Auto-scaling cooldown time. This is a number of seconds that
+            must pass after an auto-scaling event, before another auto-scaling event
+            could be invoked.
+          example: '0.75'
+          type: number
+        autoscaling_metric:
+          description: Auto-scaling metric type.
+          enum:
+          - cpu_avg
+          - mem_avg
+          example: cpu_avg
+          type: string
+        autoscaling_threshold_value:
+          description: Auto-scaling threshold value. For CPU, this should be CPU usage
+            percentage from 0 to 1. For Memory, this should be absolute value in bytes.
+          example: '0.75'
+          type: number
         created:
           description: Time when the configuration was created.
           example: '2024-01-22T19:28:42Z'
@@ -140,6 +158,9 @@ components:
           readOnly: true
           type: string
       required:
+      - autoscaling_cooldown_seconds
+      - autoscaling_metric
+      - autoscaling_threshold_value
       - max_instances
       - min_instances
       type: object
